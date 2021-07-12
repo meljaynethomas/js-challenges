@@ -19,7 +19,7 @@ const firstName = "John";
 const lastName = "Smith";
 
 export const createFullName = () => {
-  // Write your code here
+  return (firstName + " " + lastName)
 };
 
 /**
@@ -32,7 +32,11 @@ const largeNumber1 = 100;
 const largeNumber2 = 200;
 
 export const findLargestNumber = () => {
-  // Write your code here
+  if (largeNumber1 > largeNumber2) {
+    return (largeNumber1);
+  } else if (largeNumber2 > largeNumber1) {
+    return (largeNumber2);
+  }
 };
 
 /**
@@ -45,7 +49,7 @@ const addNumber1 = 12;
 const addNumber2 = 24;
 
 export const addNumbers = () => {
-  // Write your code here
+  return (addNumber1 + addNumber2)
 };
 
 /* Intermediate Challenges */
@@ -59,7 +63,7 @@ export const addNumbers = () => {
 const password = "thisIsMyVeryLongPassword123456789";
 
 export const findLengthOfPassword = () => {
-  // Write your code here
+  return (password.length)
 };
 
 /**
@@ -75,9 +79,16 @@ export const findLengthOfPassword = () => {
 const thing = "I am a thing";
 
 export const findType = () => {
-  // Write your code here
-};
-
+  if (typeof(thing) === "string") {
+    return ("This is a string");
+  } else if (typeof(thing) === "number") {
+      return ("This is a number");
+  } else if (typeof(thing) === "boolean") {
+    return ("This is a boolean");
+  } else {
+    return ("I don't know what this thing is");
+  }
+}
 /**
  * A function to programmatically decide if a name is suitable for a name tag.
  * This means it must still work even if the name is different and return something if name provided is incorrect.
@@ -88,7 +99,11 @@ export const findType = () => {
 const nameTagOption = "Timothy";
 
 export const getIsValidOnNameTag = () => {
-  // Write your code here
+  if (nameTagOption.length <= 8 && nameTagOption[0] === nameTagOption[0].toUpperCase()) {
+    return (true)
+  } else {
+    return (false)
+  }
 };
 
 /* Advanced Challenges */
@@ -102,7 +117,8 @@ export const getIsValidOnNameTag = () => {
 const stringToConvert = "14.45";
 
 export const convertStringToNumber = () => {
-  // Write your code here
+   const convertedString = parseFloat("14.45");
+   return (convertedString)
 };
 
 /**
@@ -116,7 +132,11 @@ export const convertStringToNumber = () => {
 const stringWithUppercaseLetters = "I Am A String With Uppercase Letters";
 
 export const getHasUppercaseLetters = () => {
-  // Write your code here
+  if (/[A-Z]/.test ("I Am A String With Uppercase Letters")) {
+    return (true);
+  } else {
+    return (false);
+  }
 };
 
 /* Expert Challenge */
