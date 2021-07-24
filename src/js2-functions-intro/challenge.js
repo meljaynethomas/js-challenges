@@ -17,7 +17,7 @@
  * @returns {string} John Smith
  */
 export const createFullName = (firstName, lastName) => {
-  /* Write your code here */
+  return `${firstName} ${lastName}`;
 };
 
 /**
@@ -28,8 +28,12 @@ export const createFullName = (firstName, lastName) => {
  * @param {number} number2 200
  * @returns {number} 100
  */
-export const findSmallestNumber = (/* Write the parameters here */) => {
-  /* Write your code here */
+export const findSmallestNumber = (number1, number2) => {
+  if (number1 < number2) {
+  return number1;
+  } else {
+      return number2;
+  }
 };
 
 /**
@@ -40,15 +44,15 @@ export const findSmallestNumber = (/* Write the parameters here */) => {
  * @param {number} number2 6
  * @returns {number} 18
  */
-export const multiplyNumbers = (/* Write the parameters here */) => {
-  /* Write your code here */
+export const multiplyNumbers = (number1, number2) => {
+  return (number1 * number2);
 };
 
 /* Intermediate Challenges */
 
 /**
  * A function that tells the user whether or not they've achieved a new high score.
- * If they new score is larger than the current high score then return "You got a new high score!"
+ * If the new score is larger than the current high score then return "You got a new high score!"
  * If the scores are the same return "So close!"
  * Otherwise return "Better luck next Time"
  *
@@ -57,7 +61,13 @@ export const multiplyNumbers = (/* Write the parameters here */) => {
  * @returns {string} "You got a new high score!" | "So close!" | "Better luck next time!"
  */
 export const checkIfNewHighScore = (score, highScore) => {
-  /* Write your code here */
+  if (score > highScore) {
+    return `You got a new high score!`;
+  } else if (score == highScore) {
+    return `So close!`;
+  } else {
+    return `Better luck next time!`;
+  }
 };
 
 /**
@@ -67,8 +77,11 @@ export const checkIfNewHighScore = (score, highScore) => {
  * @returns {string} "15 degrees celsius is 59 degrees fahrenheit"
  */
 export const celsiusToFahrenheit = (tempInCelsius) => {
-  /* Write your code here */
+  const tempInFarenheit = (((tempInCelsius / 5) * 9) + 32);
+  return (`${tempInCelsius} degrees celsius is ${tempInFarenheit} degrees fahrenheit`);
 };
+
+celsiusToFahrenheit(15);
 
 /**
  * A function that calculates the numebr of snickers needed for the rest of your life based on the number you eat per day,
@@ -80,8 +93,12 @@ export const celsiusToFahrenheit = (tempInCelsius) => {
  * @returns {number} 47450
  */
 export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
-  /* Write your code here */
+  const ageInDays = (maxAge - age) * 365;
+  return (ageInDays * snickersPerDay);
 };
+
+calculateLifetimeSupply (2, 25, 90);
+calculateLifetimeSupply (1, 20, 70);
 
 /* Advanced Challenges */
 
