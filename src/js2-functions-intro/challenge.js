@@ -117,8 +117,25 @@ calculateLifetimeSupply (1, 20, 70);
  * @returns {string} A - F | Score unavailable
  */
 export const getGrade = (score) => {
-  /* Write your code here */
-};
+  if(typeof(score) != 'number') {
+    score = -1;
+  }
+  if (score <= 100 && score >= 80) {
+    return `A`;
+  } else if (score >= 70 && score <= 79) {
+    return `B`;
+  } else if (score >= 60 && score <= 69) {
+    return `C`;
+  } else if (score >= 50 && score <= 59) {
+    return `D`;
+  } else if (score >= 40 && score <= 49) {
+    return `E`;
+  } else if (score >= 0 && score <= 39) {
+    return `F`;
+  } else {
+    return `Score unavailable`;
+  }
+}
 
 /**
  * A function that find the area of a circle to 2 decimal places.
@@ -126,8 +143,9 @@ export const getGrade = (score) => {
  * @param {number} radius 3
  * @returns {number} 28.27
  */
-export const calculateAreaOfCirlce = (radius) => {
-  /* Write your code here */
+export const calculateAreaOfCircle = (radius) => {
+  const areaOfCircle = Math.PI * (radius * radius);
+  return +areaOfCircle.toFixed(2);
 };
 
 /* Expert Challenge */
@@ -148,5 +166,22 @@ export const calculateAreaOfCirlce = (radius) => {
  * @param {string} name John
  */
 export const getStudentSummary = (score, name) => {
-  /* Write your code here */
-};
+  if(typeof(score) != 'number') {
+    score = -1;
+  }
+  if (score <= 100 && score >= 80) {
+    return (`Congratulations ${name}! You achieved a grade of A.`);
+  } else if (score >= 70 && score <= 79) {
+    return (`Well done ${name}! You achieved a grade of B.`);
+  } else if (score >= 60 && score <= 69) {
+    return (`Nicely done ${name}! You achieved a grade of C.`);
+  } else if (score >= 50 && score <= 59) {
+    return (`That's okay ${name}. You achieved a grade of D.`);
+  } else if (score >= 40 && score <= 49) {
+    return (`Too bad ${name}. You achieved a grade of E.`);
+  } else if (score >= 0 && score <= 39) {
+    return (`Sorry ${name}. You achieved a grade of F. There's always next year.`);
+  } else {
+    return (`My apologies ${name}, there's been an error in processing your grade.`);
+  }
+}  
