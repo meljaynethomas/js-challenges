@@ -22,9 +22,24 @@
  */
 
 export const createRecipeString = (ingredientsArr) => {
-  return;
-};
+  //LOOP THROUGH - > ACCESS TO EACH ITEM - > JOIN WITH A +
+  //GOOGLE AND LOOK THIS UP
+//   let recipeString = "";
 
+//   for(let index = 0; index < ingredientsArr.length; index++) {
+//     //CHECK LAST ITEM - > NOT GOING TO ADD +
+//     if(index === ingredientsArr.length - 1) {
+//       recipeString += ingredientsArr[index]
+//     } else {
+//     recipeString += ingredientsArr[index] + "+"
+//     }
+//   }
+
+//   return recipeString;
+// };
+
+return ingredientsArr.join("+");
+}
 /**
  * A function that takes Array of Items and returns a NEW ARRAY with the first and last item in it.
  *
@@ -33,7 +48,8 @@ export const createRecipeString = (ingredientsArr) => {
  */
 
 export const getFirstAndLastItems = (itemsArr) => {
-  return;
+  for (let index = 0; index < itemsArr.length; index++);
+  return [itemsArr[0], itemsArr[itemsArr.length-1]];
 };
 
 /**
@@ -44,8 +60,13 @@ export const getFirstAndLastItems = (itemsArr) => {
  */
 
 export const totalScores = (scoreArr) => {
-  return;
+  let total = 0;
+  for (let index = 0; index < scoreArr.length; index++) {
+    total += scoreArr[index];
+  }
+  return total;
 };
+
 
 /**
  * Intermediate Challenges
@@ -60,7 +81,11 @@ export const totalScores = (scoreArr) => {
  */
 
 export const totalRange = (rangeMax) => {
-  return;
+  let total = 0;
+  for (let index = 0; index < rangeMax.length; index++) {
+    total += rangeMax[index];
+  }
+  return total;
 };
 
 /**
