@@ -62,7 +62,7 @@ export const getFirstAndLastItems = (itemsArr) => {
 export const totalScores = (scoreArr) => {
   let total = 0;
   for (let index = 0; index < scoreArr.length; index++) {
-    total += scoreArr[index];
+    total = total + scoreArr[index];
   }
   return total;
 };
@@ -82,8 +82,8 @@ export const totalScores = (scoreArr) => {
 
 export const totalRange = (rangeMax) => {
   let total = 0;
-  for (let index = 0; index < rangeMax.length; index++) {
-    total += rangeMax[index];
+  for (let index = 0; index <= rangeMax; index++) {
+    total = total + index;
   }
   return total;
 };
@@ -96,8 +96,9 @@ export const totalRange = (rangeMax) => {
  */
 
 export const moveFirstAndLastItems = (itemsArr) => {
-  return;
-};
+  
+  console.log (itemsArr);
+  }
 
 /**
  * Read this article on how to clone an array.

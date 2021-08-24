@@ -102,7 +102,7 @@ describe("Testing totalRange()", () => {
   });
 });
 
-xdescribe("Testing moveFirstAndLastItems()", () => {
+describe("Testing moveFirstAndLastItems()", () => {
   it("Should be defined", () => {
     expect(moveFirstAndLastItems(items)).toBeDefined();
   });
