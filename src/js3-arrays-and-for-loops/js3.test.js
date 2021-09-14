@@ -117,7 +117,7 @@ describe("Testing moveFirstAndLastItems()", () => {
   });
 });
 
-xdescribe("Testing removeEvenNumbers()", () => {
+describe("Testing removeEvenNumbers()", () => {
   it("Should be defined", () => {
     expect(removeEvenNumbers(scores)).toBeDefined();
   });
@@ -149,7 +149,7 @@ xdescribe("Testing removeEvenNumbers()", () => {
   });
 });
 
-xdescribe("Testing generateAverage()", () => {
+describe("Testing generateAverage()", () => {
   it("Should be defined", () => {
     expect(generateAverage([10])).toBeDefined();
   });

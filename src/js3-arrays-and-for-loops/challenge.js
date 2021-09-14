@@ -22,8 +22,8 @@
  */
 
 export const createRecipeString = (ingredientsArr) => {
-  //LOOP THROUGH - > ACCESS TO EACH ITEM - > JOIN WITH A +
-  //GOOGLE AND LOOK THIS UP
+  //THERE ARE TWO WAYS OF DOING THIS:
+  //1. LOOP THROUGH - > ACCESS TO EACH ITEM - > JOIN WITH A +
 //   let recipeString = "";
 
 //   for(let index = 0; index < ingredientsArr.length; index++) {
@@ -37,6 +37,8 @@ export const createRecipeString = (ingredientsArr) => {
 
 //   return recipeString;
 // };
+
+//2. GOOGLE AND LOOK THIS UP:
 
 return ingredientsArr.join("+");
 }
@@ -95,10 +97,18 @@ export const totalRange = (rangeMax) => {
  * @return {string[]} ["Dave","Tony","John"]
  */
 
+// export const moveFirstAndLastItems = (itemsArr) => {
+//   const lastItem = itemsArr.pop();
+//   itemsArr.unshift(lastItem);
+//   return itemsArr;
+// }
+
 export const moveFirstAndLastItems = (itemsArr) => {
-  
-  console.log (itemsArr);
-  }
+  const result = [...itemsArr];
+  const lastItem = result.pop();
+  result.unshift(lastItem);
+  return result;
+};
 
 /**
  * Read this article on how to clone an array.
@@ -115,7 +125,14 @@ export const moveFirstAndLastItems = (itemsArr) => {
  */
 
 export const removeEvenNumbers = (numberArr) => {
-  return;
+  const oddNumbers = [];
+  for (let index = 0; index < numberArr.length; index++) {
+    let current = numberArr[index];
+    if (current % 2 !== 0) {
+      oddNumbers.push(current);
+    }
+  }
+  return oddNumbers;
 };
 
 /**
@@ -131,7 +148,13 @@ export const removeEvenNumbers = (numberArr) => {
  */
 
 export const generateAverage = (numberArr) => {
-  return;
+  const clonedArr = [...numberArr];
+  let total = 0;
+  for (let index = 0; index < clonedArr.length; index++) {
+    total = total + clonedArr[index];
+    let average = (total/clonedArr.length);
+    return average;
+  }
 };
 
 /**
