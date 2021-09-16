@@ -9,6 +9,11 @@
   share it with the group!
 */
 
+//CHARLIE'S HINTS:
+//ARRAY METHODS / ITERATORS - REDUCE(), JOIN(), SORT(), INDEXOF(), AND REVERSE()
+//GO TO MDN, LOOK UP THE METHODS AND APPLY
+
+
 /**
  * Foundation Challenges
  */
@@ -22,7 +27,12 @@
  */
 
 export const totalScoresArr = (scoresArr) => {
-  return;
+
+  const totalScores = scoresArr.reduce((accumulator, current) => {
+    return accumulator + current;
+  }, 0);
+
+  return totalScores;
 };
 
 /**
@@ -35,8 +45,13 @@ export const totalScoresArr = (scoresArr) => {
  */
 
 export const reverseString = (toReverse) => {
-  return;
+  
+  const newArray = toReverse.split("");
+  const reverseArray = newArray.reverse();
+  const reversedString = reverseArray.join("");
+  return reversedString;
 };
+
 
 /**
  * A function that arranges an array of characters alphabetically.
@@ -48,7 +63,12 @@ export const reverseString = (toReverse) => {
  */
 
 export const sortCharactersAlphabetically = (charcterArr) => {
-  return;
+  
+  const lowerCaseChar = charcterArr.map((charcter) => charcter.toLowerCase());
+
+  const sortedChar = lowerCaseChar.sort();
+
+  return sortedChar;
 };
 
 /**
@@ -63,7 +83,9 @@ export const sortCharactersAlphabetically = (charcterArr) => {
  */
 
 export const sortNumbersHighToLow = (numberArr) => {
-  return;
+  numberArr.sort((a, b) => a - b);
+  const reversedArr = numberArr.reverse();
+  return reversedArr;
 };
 
 /**
