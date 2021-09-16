@@ -13,6 +13,10 @@
  * Foundation Challenges
  */
 
+// MAP -> NEW ARRAY -> FUNCTION APPLIED TO EACH ITEM IN THE ARRAY
+// FILTER -> NEW ARRAY -> EACH ITEM HAS TO PASS A CONDITION
+// FOREACH -> READ ONLY -> GIVE YOU ACCESS TO EACH ITEM IN THE ARRAY
+
 /**
  * A function that takes an array of Booleans and then removes the false values from the given array.
  * It should create a new array only consiting of the true values.
@@ -22,7 +26,10 @@
  */
 
 export const removeFalseValues = (booleanArr) => {
-  return;
+  const trueValues = booleanArr.filter((boolean) => {
+    return boolean === true;
+  });
+  return trueValues;
 };
 
 /**
@@ -34,7 +41,10 @@ export const removeFalseValues = (booleanArr) => {
  */
 
 export const createPercentageList = (numbersArr) => {
-  return;
+  const percentages = numbersArr.map((number) => {
+    return `${number * 100}%`;
+  });
+  return percentages;
 };
 
 /**
@@ -47,7 +57,8 @@ export const createPercentageList = (numbersArr) => {
  */
 
 export const createListOfPoessessions = (possessionsArr, name) => {
-  return;
+  const whoseStuff = possessionsArr.map((possession) => `${name} ${possession}`);
+  return whoseStuff;
 };
 
 /**
@@ -72,7 +83,8 @@ export const createListOfPoessessions = (possessionsArr, name) => {
  */
 
 export const convertStringToNumbersArray = (numberString) => {
-  return;
+  const arrayOfNumbers = numberString.split('+').map(Number);
+  return arrayOfNumbers;
 };
 
 /**
@@ -84,8 +96,12 @@ export const convertStringToNumbersArray = (numberString) => {
  */
 
 export const createOddEvenArray = (numberString) => {
-  return;
-};
+
+  const numberArray = convertStringToNumbersArray(numberString);
+
+  const oddEvenArray = numberArray.map((number) => (number % 2 === 0 ? "even" : "odd"));
+   return oddEvenArray;
+  };
 
 /**
  * A function that takes an array of book titles and a search term.
@@ -97,7 +113,9 @@ export const createOddEvenArray = (numberString) => {
  */
 
 export const filterBooksBySearch = (booksArr, searchTerm) => {
-  return;
+  
+  const searchResult = booksArr.filter((book) => book.includes(searchTerm));
+  return searchResult;
 };
 
 /**
