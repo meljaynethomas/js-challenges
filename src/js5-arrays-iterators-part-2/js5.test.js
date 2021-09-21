@@ -133,7 +133,7 @@ describe("Testing sortNumbersHighToLow()", () => {
 
 });
 
-xdescribe("Testing checkItemInstock()", () => {
+describe("Testing checkItemInstock()", () => {
   const stockList = [
     "apple",
     "banana",
@@ -174,7 +174,7 @@ xdescribe("Testing checkItemInstock()", () => {
   });
 });
 
-xdescribe("Testing checkPrimaryColours()", () => {
+describe("Testing checkPrimaryColours()", () => {
   const rainbowColours = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
   const primaryColours = ["red", "yellow", "blue"];
 

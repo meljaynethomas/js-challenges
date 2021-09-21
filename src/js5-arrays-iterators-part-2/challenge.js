@@ -116,6 +116,8 @@ export const checkItemInstock = (toCheck) => {
     "blueberry",
     "melon",
   ];
+    
+  
   return;
 };
 
@@ -130,7 +132,16 @@ export const checkItemInstock = (toCheck) => {
  */
 
 export const checkPrimaryColours = (coloursArr) => {
-  return;
+  
+const containsPrimaryColours = coloursArr.filter((colour) => {
+
+ if (colour == "red" || "blue" || "yellow") {
+   return true;
+ } else {
+   return false;
+ }
+})
+  return containsPrimaryColours;
 };
 
 /**
