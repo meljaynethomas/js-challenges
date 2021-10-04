@@ -103,9 +103,10 @@ export const sortNumbersHighToLow = (numberArr) => {
  */
 
 export const checkItemInstock = (toCheck) => {
+  // console.log(`**** Checking stock for ${toCheck}`);
   const stockList = [
     "apple",
-    "banana",
+    "banana", 
     "orange",
     "coconut",
     "strawberry",
@@ -116,11 +117,18 @@ export const checkItemInstock = (toCheck) => {
     "blueberry",
     "melon",
   ];
-    
-  
-  return;
-};
 
+  for (let index = 0; index < stockList.length; index++) {
+    // console.log(`I am checking ${stockList[index]} to see if it's the same as ${toCheck}`);
+    if (toCheck === stockList[index]) {
+      // console.log(`IT WAS! I'm going to return the value.`);
+      return `${toCheck} is instock, it is on aisle ${[index]}.`;
+    }
+  }
+  // console.log(`We checked all of the items and didn't return, so it's not in stock.`);
+  return `Sorry ${toCheck} is not instock.`
+}
+  
 /**
  * A function that takes an array of colours and checks if EVERY colour is a primary colour.
  * The primary colours are ["red", "blue", "yellow"].
@@ -131,17 +139,12 @@ export const checkItemInstock = (toCheck) => {
  * @return {boolean} false
  */
 
-export const checkPrimaryColours = (coloursArr) => {
-  
-const containsPrimaryColours = coloursArr.filter((colour) => {
+// HAD TO LOOK AT THE SOLUTION FOR THIS ONE:
 
- if (colour == "red" || "blue" || "yellow") {
-   return true;
- } else {
-   return false;
- }
-})
-  return containsPrimaryColours;
+export const checkPrimaryColours = (coloursArr) => {
+  const primaryColours = ["red", "blue", "yellow"];
+  const colourCheck = coloursArr.every((colour) => primaryColours.includes(colour));
+  return colourCheck;
 };
 
 /**
