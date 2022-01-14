@@ -1,5 +1,7 @@
 /* This challenge build upon previous knowledge and introduces the concept of complex data types (arrays of objects) */
 
+import { objectExpression } from "@babel/types";
+
 /* 
   All challenges in this repository are seperated into four levels: Foundation, Intermediate, Advanced and Expert.
   The expectation is to complete all Foundation level challenges, with Intermediate and upwards pushing your knowledge
@@ -17,7 +19,11 @@
  * @returns {string[]} A list of the employees quotes for the website
  */
 export const getEmployeeQuotes = (employeeArr) => {
-  // Write code here
+  const employeeQuoteArray = employeeArr.map((quote) => {
+    const employeeQuote = quote.quote;
+    return employeeQuote;
+  });
+  return employeeQuoteArray;
 };
 
 /**
@@ -27,7 +33,8 @@ export const getEmployeeQuotes = (employeeArr) => {
  * @returns {{name: string, quote: string, yearsEmployed: number, isManagement: boolean}[]} An array containing only managers
  */
 export const getTheManagers = (employeeArr) => {
-  // Write code here
+  const manager = employeeArr.filter(employee => employee.isManagement == true);
+  return manager;
 };
 
 /**
@@ -37,7 +44,7 @@ export const getTheManagers = (employeeArr) => {
  * @returns {number} The number of the keys on the object
  */
 export const getNumberOfKeys = (object) => {
-  // Write code here
+  return Object.keys(object).length;
 };
 
 /* Intermediate Challenges */
@@ -50,8 +57,14 @@ export const getNumberOfKeys = (object) => {
  * @returns {{name: string, price: number, hasFreeShipping: boolean, quantity: number}} The most expensive item in the shopping basket
  */
 export const findMostExpensiveItem = (shoppingBasketArr) => {
-  // Write code here
+  //put objects in order of price
+  //return the most expensive
+  const sortedByHighestPrice = shoppingBasketArr.sort((a, b) => {
+    return b.price - a.price;
+  });
+  return sortedByHighestPrice[0];
 };
+
 
 /**
  * A function which add a new key of totalPrice to each shopping basket item in the array where total cost is
@@ -69,7 +82,10 @@ export const findMostExpensiveItem = (shoppingBasketArr) => {
  * @returns {{name: string, price: number, hasFreeShipping: boolean, quantity: number, totalPrice: number}[]} A new array where each object has had a total price added to it
  */
 export const settotalPrice = (shoppingBasketArr) => {
-  // Write code here
+  const newShoppingBasketArr = shoppingBasketArr.map(object => {
+    return {...object, totalPrice: object.price * object.quantity};
+  });
+  return newShoppingBasketArr;
 };
 
 /**
@@ -78,9 +94,13 @@ export const settotalPrice = (shoppingBasketArr) => {
  * @param {{name: string, price: number, hasFreeShipping: boolean, quantity: number, totalPrice: number}[]} shoppingBasketArr - An array of basket items for an online shop
  * @returns {number} The total cost of the order
  */
-export const totalShoppingBasket = (shoppingBasketArr) => {
-  // Write code here
-};
+export const totalShoppingBasket = (newShoppingBasketArr) => {
+  let totalBasket = 0;
+    for (let i = 0; i < newShoppingBasketArr.length; i++) {
+      totalBasket = totalBasket + newShoppingBasketArr[i].totalPrice;
+    };
+    return totalBasket;
+  };
 
 /* Advanced Challenges */
 

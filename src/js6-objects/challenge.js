@@ -1,5 +1,7 @@
 /* This challenge build upon previous knowledge and introduces the use of objects */
 
+import { booleanLiteral, numberLiteralTypeAnnotation } from "@babel/types";
+
 /* 
   All challenges in this repository are seperated into four levels: Foundation, Intermediate, Advanced and Expert.
   The expectation is to complete all Foundation level challenges, with Intermediate and upwards pushing your knowledge
@@ -21,7 +23,7 @@
  * @return {number} The price of the piece of furniture
  */
 export const getFurniturePrice = (furniture) => {
-  /* Write code here */
+  return furniture.price;
 };
 
 /**
@@ -32,7 +34,8 @@ export const getFurniturePrice = (furniture) => {
  * @returns {{name: string, price: number, location: string}} furniture - A furniture object from the catalogue
  */
 export const setFurnitureStoreLocation = (furniture, location) => {
-  /* Write code here */
+  furniture.location = location;
+  return furniture;
 };
 
 /**
@@ -46,7 +49,13 @@ export const setFurnitureStoreLocation = (furniture, location) => {
  * @returns {{name: string, noOfSeats: number, engineType: string, canTravelSolarSystems: boolean}} spaceship - The space ship object
  */
 export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems) => {
-  /* Write code here */
+  let spaceship = {
+    name: name, 
+    noOfSeats: noOfSeats,
+    engineType: engineType,
+    canTravelSolarSystems: canTravelSolarSystems,
+  }
+  return spaceship;
 };
 
 /* Intermediate Challenges */
@@ -59,8 +68,21 @@ export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems
  * @returns {{name: string, username: string}} User - The user object with the same username or a new one
  */
 export const setUserName = (user, username) => {
-  /* Write code here */
+  if (user.hasOwnProperty('username')) {
+    return user;
+  } else {
+    user.username = username;
+    return user;
+  }
+//  SUGGESTED SOLUTION:
+// const hasUserName = user.hasOwnProperty("username");
+//   if (!hasUserName) {
+//     user.username = username;
+//   }
+//   return user;
 };
+
+
 
 /**
  * A function which takes a customer object from the database and returns the same object where the name has been
