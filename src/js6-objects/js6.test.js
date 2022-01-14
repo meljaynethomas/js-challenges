@@ -112,7 +112,7 @@ describe("splitFullNameToFirstAndLast() tests", () => {
   });
 });
 
-xdescribe("accessGivenKey() tests", () => {
+describe("accessGivenKey() tests", () => {
   const person = { name: "Joe Bloggs", height: 170, eyeColour: "blue", likesIceCream: false };
 
   it("Should access the eyeColour property", () => {

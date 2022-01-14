@@ -92,7 +92,12 @@ export const setUserName = (user, username) => {
  * @returns {{fullName: string, firstName: string, lastName: string}} A customer object from the database with the name separated into first and last
  */
 export const splitFullNameToFirstAndLast = (customer) => {
-  /* Write code here */
+  //Split fullName into firstName and lastName
+  //Reattach firstName and lastName to object
+  const nameArray = customer.fullName.split(" ");
+    customer.firstName = nameArray[0];
+    customer.lastName = nameArray[1];
+    return customer;
 };
 
 /**
@@ -105,7 +110,7 @@ export const splitFullNameToFirstAndLast = (customer) => {
  * @returns {any} value - The value you have accessed on the object
  */
 export const accessGivenKey = (object, key) => {
-  /* Write code here */
+  return object[key];
 };
 
 /* Advanced Challenges */
