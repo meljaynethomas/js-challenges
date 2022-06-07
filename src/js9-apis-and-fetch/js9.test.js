@@ -129,7 +129,7 @@ describe("findPersonWithId() tests", () => {
   });
 });
 
-describe("getPeopleWithMatchingInterests() tests", () => {
+xdescribe("getPeopleWithMatchingInterests() tests", () => {
   const dummySwimming = [
     {
       id: "001",
@@ -189,7 +189,7 @@ describe("getPeopleWithMatchingInterests() tests", () => {
   });
 });
 
-describe("setDescription() tests", () => {
+xdescribe("setDescription() tests", () => {
   const dummyDescriptions = [
     {
       age: 47,
@@ -279,7 +279,7 @@ describe("setDescription() tests", () => {
   });
 });
 
-describe("setInterestDetails() tests", () => {
+xdescribe("setInterestDetails() tests", () => {
   const dummyDetailedInterests = [
     {
       age: 47,

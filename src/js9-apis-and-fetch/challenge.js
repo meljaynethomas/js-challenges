@@ -17,9 +17,15 @@
  * @param {string} url - The url of the API to fetch from
  * @returns {{id: string, name: string, age: number, height: number, interests: string[], isEmployed: boolean}[]} The data from the API
  */
- export const getData = (url) => {
-  // Your code here
-};
+ 
+  export const getData = (url) => {
+    return fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        return data;
+      });
+  };
+
 
 /**
  * A function which calls the API from the provided URL and returns just the list of names from each object.
@@ -28,7 +34,9 @@
  * @returns {string[]} The list of names from the API
  */
 export const getNames = (url) => {
-  // Your code here
+  return fetch(url)
+    .then((res) => res.json())
+    .then((data) => data.map((item) => item.name));
 };
 
 /**
@@ -38,7 +46,9 @@ export const getNames = (url) => {
  * @return {{id: string, name: string, age: number, height: number, interests: string[], isEmployed: boolean}[]} The employed people from the API
  */
 export const getEmployedPeople = (url) => {
-  // Your code here
+  return fetch(url)
+    .then((res) => res.json())
+    .then((data) => data.filter((person) => person.isEmployed));
 };
 
 /* Intermediate Challenges */
@@ -52,7 +62,12 @@ export const getEmployedPeople = (url) => {
  * @returns {{id: string, name: string, age: number, height: number, interests: string[], isEmployed: boolean} | string} A person object OR A string saying "Person not found"
  */
 export const findPersonWithId = (url, id) => {
-  // Your code here
+  return fetch(url)
+    .then((response) => response.json())
+    .then((people) => {
+      const foundPerson = people.find((person) => person.id === id);
+      return foundPerson ? foundPerson : "Person not found";
+    });
 };
 
 /**
